@@ -6,6 +6,7 @@ from .models import Letting
 # nunc, pulvinar a tempor et, bibendum id arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
 # posuere cubilia curae; Cras eget scelerisque
 def index(request):
+    """Here is the lettings list view with its content below"""
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
     return render(request, 'lettings/index.html', context)
@@ -20,6 +21,7 @@ def index(request):
 # condimentum auctor elementum. Donec quis nisi ligula. Integer vehicula tincidunt enim, ac lacinia augue pulvinar
 # sit amet.
 def letting(request, letting_id):
+    """Here is the letting view with its content below"""
     letting = Letting.objects.get(id=letting_id)
     context = {
         'title': letting.title,
