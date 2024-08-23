@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
         ('oc_lettings_site', '0001_initial'),
     ]
 
-    operations = [
+    database_operations = [
         migrations.AlterModelTable(
             name='Address',
             table='lettings_address'
@@ -19,9 +19,10 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='letting',
             name='address',
-            field=models.ForeignKey(
-                on_delete=django.db.models.deletion.PROTECT, to='oc_lettings_site.Address')
+            field=models.OneToOneField(
+                on_delete=django.db.models.deletion.CASCADE, to='oc_lettings_site.Address'),
         ),
+
         migrations.AlterModelTable(
             name='Letting',
             table='lettings_letting'
@@ -30,4 +31,21 @@ class Migration(migrations.Migration):
             name='Profile',
             table='profiles_profile'
         ),
+    ]
+    state_operations = [
+        migrations.DeleteModel(
+            name='Address',
+        ),
+        migrations.DeleteModel(
+            name='Letting',
+        ),
+        migrations.DeleteModel(
+            name='Profile',
+        ),
+    ]
+    operations = [
+        migrations.SeparateDatabaseAndState(
+            database_operations=database_operations,
+            state_operations=state_operations
+        )
     ]

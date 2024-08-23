@@ -1,7 +1,9 @@
 import os
 
 from pathlib import Path
+from dotenv import load_dotenv, find_dotenv
 
+load_dotenv(find_dotenv())
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,6 +23,7 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
+
 
 INSTALLED_APPS = [
     'oc_lettings_site.apps.OCLettingsSiteConfig',

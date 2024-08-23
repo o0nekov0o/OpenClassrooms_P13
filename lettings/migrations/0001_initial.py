@@ -10,9 +10,10 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('oc_lettings_site', '0002_auto_20240814_0016'),
     ]
 
-    operations = [
+    state_operations = [
         migrations.CreateModel(
             name='Address',
             fields=[
@@ -26,14 +27,10 @@ class Migration(migrations.Migration):
             ],
             options={
                 'verbose_name_plural': 'addresses',
+                'db_table': 'lettings_address',
             },
         ),
-        migrations.CreateModel(
-            name='Letting',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=256)),
-                ('address', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='lettings.Address')),
-            ],
-        ),
+    ]
+    operations = [
+        migrations.SeparateDatabaseAndState(state_operations=state_operations)
     ]
