@@ -2,7 +2,7 @@ name: Build & Deploy OC_Lettings_Site
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   build-deploy:
     name: Build & Deploy OC_Lettings_Site for Beginner
