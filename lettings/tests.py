@@ -52,4 +52,3 @@ class TestCaseLettings(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         response = self.client.get('/lettings/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-

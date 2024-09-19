@@ -40,4 +40,3 @@ class TestCaseProfiles(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         response = self.client.get('/profiles/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-
