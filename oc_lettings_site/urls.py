@@ -5,13 +5,8 @@ from profiles import views as profiles_views
 from oc_lettings_site import views as oc_lettings_site_views
 
 
-def trigger_error(request):
-    division_by_zero = 1 / 0
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sentry-debug/', trigger_error),
     path('', oc_lettings_site_views.index, name='index'),
     path('lettings/', lettings_views.index, name='lettings_index'),
     path('lettings/<int:letting_id>/', lettings_views.letting, name='letting'),
