@@ -16,7 +16,7 @@ jobs:
       - name: Unit & Integration Tests
         run: |
           pip install -r requirements.txt
-          pytest .
+          pytest
   flake8:
     name: Run Flake8
     runs-on: ubuntu-latest
@@ -26,4 +26,4 @@ jobs:
       - name: PEP8 Compatibility Tests
         run: |
           pip install -r requirements.txt
-          flake8 .
+          flake8
