@@ -34,12 +34,12 @@ jobs:
       - name: Login Docker
         uses: docker/login-action@v1
         with:
-          username: ${{ DOCKER_HUB_USERNAME }}
-          password: ${{ DOCKER_HUB_TOKEN }}
+          username: ${{secrets.DOCKER_HUB_USERNAME}}
+          password: ${{secrets.DOCKER_HUB_TOKEN}}
       - name: Push Docker Hub
         uses: docker/build-push-action@v2
         with:
           context:
             dockerfile: Dockerfile
             push: true
-            tags: ${{ DOCKER_HUB_USERNAME }}/oc-lettings-site:$(date-'%Y%m%d%H%M%S')
+            tags: ${{secrets.DOCKER_HUB_USERNAME}}/oc-lettings-site:$(date-'%Y%m%d%H%M%S')
