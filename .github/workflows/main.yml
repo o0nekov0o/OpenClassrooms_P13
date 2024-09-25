@@ -1,4 +1,4 @@
-name: Build & Deploy OC_Lettings_Site
+name: Build Deploy OC_Lettings_Site
 on:
   push:
     branches:
@@ -27,3 +27,19 @@ jobs:
         run: |
           pip install -r requirements.txt
           flake8
+  docker:
+    name: Push Docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login Docker
+        uses: docker/login-action@v1
+        with:
+          username: ${{DOCKER_HUB_USERNAME}}
+          password: ${{DOCKER_HUB_TOKEN}}
+      - name: Push Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          context:
+            dockerfile: Dockerfile
+            push: true
+            tags: ${{DOCKER_HUB_USERNAME}}/oc-lettings-site:$(date-'%Y%m%d%H%M%S')
