@@ -41,5 +41,5 @@ jobs:
         with:
           context:
           dockerfile: Dockerfile
-          push: true
+          push: false
           tags: ${{secrets.DOCKER_HUB_USERNAME}}/oc-lettings-site:$(date-'%Y%m%d%H%M%S')
