@@ -39,7 +39,7 @@ jobs:
       - name: Push Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context:
+          context: .
           dockerfile: Dockerfile
           push: false
-          tags: ${{secrets.DOCKER_HUB_USERNAME}}/oc-lettings-site:$(date-'%Y%m%d%H%M%S')
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
