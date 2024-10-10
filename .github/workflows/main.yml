@@ -39,9 +39,9 @@ jobs:
           username: ${{secrets.DOCKER_HUB_USERNAME}}
           password: ${{secrets.DOCKER_HUB_TOKEN}}
       - name: Push Docker Hub
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v2
         with:
           context: .
+          dockerfile: Dockerfile
           push: false
-          # tags: ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
-          tags: o0nekov0o/oc-lettings-site:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:$( date-'%Y%m%d%H%M%S' )
