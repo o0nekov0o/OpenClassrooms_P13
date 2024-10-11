@@ -5,7 +5,7 @@ RUN mkdir /app
 WORKDIR /app
 COPY . /app/
 RUN python -m venv /venv
-ENV PATH="/venv/bin/$PATH"
+ENV PATH="/venv/bin/:$PATH"
 COPY entrypoint.sh /app/entrypoint.sh
 RUN python -m pip install --upgrade pip
 COPY requirements.txt /app/
