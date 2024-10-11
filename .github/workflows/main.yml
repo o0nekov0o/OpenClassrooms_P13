@@ -43,5 +43,5 @@ jobs:
         with:
           context: .
           dockerfile: Dockerfile
-          push: false
+          push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
