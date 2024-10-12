@@ -45,3 +45,25 @@ jobs:
           dockerfile: Dockerfile
           push: false
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
+  deploy:
+    name: Deploy Website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: 22
+          script_stop: true
+          script: |
+            echo "=========== Git reset hard ==========="
+            cd /var/www/OpenClassrooms_P13
+            sudo git fetch
+            sudo git reset --hard origin/master
+            sudo git status
+            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
+            echo "=========== Git reset hard ==========="
