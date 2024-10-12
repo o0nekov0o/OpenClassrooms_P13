@@ -29,7 +29,7 @@ sentry_sdk.init(
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    '51.178.82.168'
+    '51.178.82.168',
 ]
 
 # Application definition
