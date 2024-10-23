@@ -8,7 +8,7 @@ class Profile(models.Model):
 
     Args:
         user: Kevin
-        favorite_city: New York
+        favorite_city: Dijon
 
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -11,6 +11,7 @@ def index(request):
     Returns:
         | Profiles list based on users' username
         | that way they can be differentiated
+        | Then this is called in oc_lettings_site/urls.py
 
     """
     profiles_list = Profile.objects.all()
@@ -28,6 +29,7 @@ def profile(request, username):
     Returns:
         | Let's suppose we clicked on a username in the profiles list
         | Now we can access to the parameters that are associated
+        | Then this is called in oc_lettings_site/urls.py
 
     """
     profile = Profile.objects.get(user__username=username)

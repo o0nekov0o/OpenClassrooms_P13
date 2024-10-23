@@ -12,6 +12,7 @@ def index(request):
     Returns:
         | Lettings list based on contacts name
         | that way they can be differentiated
+        | Then this is called in oc_lettings_site/urls.py
 
     """
     lettings_list = Letting.objects.all()
@@ -34,6 +35,7 @@ def letting(request, letting_id):
     Returns:
         | Let's suppose we clicked on a name in the lettings list
         | Now we can access to the address which is associated
+        | Then this is called in oc_lettings_site/urls.py
 
 
     """
