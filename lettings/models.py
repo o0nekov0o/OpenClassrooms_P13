@@ -3,7 +3,17 @@ from django.core.validators import MaxValueValidator, MinLengthValidator
 
 
 class Address(models.Model):
-    """Here is the address model with its attributes below"""
+    """
+    Here is the address model with its attributes below (and some examples)
+
+    Args:
+        number: 10
+        street: Avenue Gustave Eiffel
+        city: Paris
+        state: Ile-de-France
+        zip_code: 75007
+        country_iso_code: 3166-1
+    """
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
     city = models.CharField(max_length=64)
@@ -19,7 +29,14 @@ class Address(models.Model):
 
 
 class Letting(models.Model):
-    """Here is the letting model with its attributes below"""
+    """
+    Here is the letting model with its attributes below (and some examples)
+
+    Args:
+        title: receives the name of the contact to save
+        address: receives the already saved address to associate with the contact
+
+    """
     title = models.CharField(max_length=256)
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
 

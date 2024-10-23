@@ -6,7 +6,14 @@ from .models import Letting
 # nunc, pulvinar a tempor et, bibendum id arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
 # posuere cubilia curae; Cras eget scelerisque
 def index(request):
-    """Here is the lettings list view with its content below"""
+    """
+    Here is the lettings list view and what it renders below
+
+    Returns:
+        | Lettings list based on contacts name
+        | that way they can be differentiated
+
+    """
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
     return render(request, 'lettings/index.html', context)
@@ -21,7 +28,15 @@ def index(request):
 # condimentum auctor elementum. Donec quis nisi ligula. Integer vehicula tincidunt enim, ac lacinia augue pulvinar
 # sit amet.
 def letting(request, letting_id):
-    """Here is the letting view with its content below"""
+    """
+    Here is the letting view and what it renders below
+
+    Returns:
+        | Let's suppose we clicked on a name in the lettings list
+        | Now we can access to the address which is associated
+
+
+    """
     letting = Letting.objects.get(id=letting_id)
     context = {
         'title': letting.title,
