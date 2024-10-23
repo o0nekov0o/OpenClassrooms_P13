@@ -75,3 +75,13 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+### Additional information
+
+- For better functionality, install this app from ubuntu 24.04
+- Don't forget to add these lines into .env file in root folder
+```bash
+ADMIN_PASSWORD=Abc1234!
+USER_PASSWORD=toto1234
+SECRET_KEY=django-insecure-n2wl_y!1kei7%(9a+l81yx^y%_*pd6+5g*!f#$_&bxm*6@hvpd
+```
