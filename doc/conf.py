@@ -6,7 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-import sys, os, django
+import sys
+import os
+import django
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, os.path.abspath('..lettings'))
 sys.path.insert(0, os.path.abspath('..profiles'))
