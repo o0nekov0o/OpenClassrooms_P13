@@ -76,10 +76,18 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
 
-### Additional information
+### Déploiement
 
-- For better functionality, install this app from ubuntu 24.04
-- Don't forget to add these lines into .env file in root folder
+Par le biais du fichier .github/main.yml, le code est testé via Pytest et Flake8__
+Pour cela, les tests sont simulés sur ubuntu 24.04 correspondant à notre serveur__
+Pytest et Flake8 sont eux apportés par l'intermédiaire du fichier requirements.txt__ 
+Une fois les tests OK, l'image docker de notre app est construite et mise en ligne__
+Pour la construire, les fichiers docker-compose et Dockerfile servent d'indication__
+Une fois la construction OK, celle-ci est reproduite en local sur le serveur cible__
+Des lors, le site est accessible via l'adresse du serveur servant au déploiement__
+Pour un déploiement opérationnel, installer cette application depuis ubuntu 24.04__
+Ci-dessous le contenu du fichier .env à ajouter à la racine du répertoire de l'app__
+
 ```bash
 ADMIN_PASSWORD=Abc1234!
 USER_PASSWORD=toto1234
