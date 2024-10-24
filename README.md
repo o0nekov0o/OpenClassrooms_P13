@@ -78,15 +78,15 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 ### Déploiement
 
-Par le biais du fichier .github/main.yml, le code est testé via Pytest et Flake8__
-Pour cela, les tests sont simulés sur ubuntu 24.04 correspondant à notre serveur__
-Pytest et Flake8 sont eux apportés par l'intermédiaire du fichier requirements.txt__ 
-Une fois les tests OK, l'image docker de notre app est construite et mise en ligne__
-Pour la construire, les fichiers docker-compose et Dockerfile servent d'indication__
-Une fois la construction OK, celle-ci est reproduite en local sur le serveur cible__
-Des lors, le site est accessible via l'adresse du serveur servant au déploiement__
-Pour un déploiement opérationnel, installer cette application depuis ubuntu 24.04__
-Ci-dessous le contenu du fichier .env à ajouter à la racine du répertoire de l'app__
+Par le biais du fichier .github/main.yml, le code est testé via Pytest et Flake <br/>
+Pour cela, les tests sont simulés sur ubuntu 24.04 correspondant à notre serveur <br/>
+Pytest et Flake8 sont eux apportés par l'intermédiaire du fichier requirements.txt <br/>
+Une fois les tests OK, l'image docker de notre app est construite et mise en ligne <br/>
+Pour la construire, les fichiers docker-compose et Dockerfile servent d'indication <br/>
+Une fois la construction OK, celle-ci est reproduite en local sur le serveur cible <br/>
+Des lors, le site est accessible via l'adresse du serveur servant au déploiement <br/>
+Pour un déploiement opérationnel, installer cette application depuis ubuntu 24.04 <br/>
+Ci-dessous le contenu du fichier .env à ajouter à la racine du répertoire de l'app <br/>
 
 ```bash
 ADMIN_PASSWORD=Abc1234!
