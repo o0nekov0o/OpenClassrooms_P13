@@ -65,5 +65,5 @@ jobs:
             docker stop $(docker ps -a -q)
             docker rm $(docker ps -a -q)
             docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
-            docker run -it -d -p 8000:8000 ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest /app/entrypoint.sh
+            docker run --restart always -it -d -p 8000:8000 ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest /app/entrypoint.sh
             echo "=========== Deploy Website ==========="
