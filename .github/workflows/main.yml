@@ -62,8 +62,12 @@ jobs:
           script: |
             echo "=========== Git reset hard ==========="
             cd /var/www/OpenClassrooms_P13
-            sudo git fetch
-            sudo git reset --hard origin/master
-            sudo git status
-            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
+            git fetch
+            git reset --hard origin/master
+            git status
+            docker compose down
+            docker compose build
+            docker compose up
+            rm *
+            rm -r *
             echo "=========== Git reset hard ==========="
