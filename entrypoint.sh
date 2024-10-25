@@ -1,9 +1,7 @@
 #!/bin/bash
 
 set -e
-pip install --upgrade virtualenv
-virtualenv -p python3 venv
-source venv/bin/activate
+source /venv/bin/activate
 python manage.py makemigrations
 python manage.py migrate
 if [$1 == 'gunicorn']; then
