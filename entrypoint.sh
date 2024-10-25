@@ -1,7 +1,8 @@
 #!/bin/bash
 
 set -e
-pyhthon3 -m venv venv
+pip install --upgrade virtualenv
+virtualenv -p python3 venv
 source venv/bin/activate
 python manage.py makemigrations
 python manage.py migrate
