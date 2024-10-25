@@ -65,7 +65,6 @@ jobs:
             sudo git fetch
             sudo git reset --hard origin/master
             sudo git status
-            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
             docker compose build
             docker compose up
             rm *
