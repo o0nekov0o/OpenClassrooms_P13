@@ -68,6 +68,4 @@ jobs:
             docker compose down
             docker compose build
             docker compose up
-            rm *
-            rm -r *
             echo "=========== Git reset hard ==========="
