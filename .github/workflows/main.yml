@@ -46,6 +46,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
   deploy:
+    needs: docker
     name: Deploy Website
     runs-on: ubuntu-latest
     steps:
