@@ -60,7 +60,7 @@ jobs:
           port: 22
           script_stop: true
           script: |
-            echo "=========== Git reset hard ==========="
+            echo "=========== Deploy Website ==========="
             cd /var/www/OpenClassrooms_P13
             sudo git fetch
             sudo git reset --hard origin/master
@@ -68,4 +68,4 @@ jobs:
             docker compose down
             docker compose build
             docker compose up
-            echo "=========== Git reset hard ==========="
+            echo "=========== Deploy Website ==========="
