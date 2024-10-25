@@ -65,8 +65,5 @@ jobs:
             sudo git fetch
             sudo git reset --hard origin/master
             sudo git status
-            docker compose build
-            docker compose up
-            rm *
-            rm -r *
+            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/oc-lettings-site:latest
             echo "=========== Git reset hard ==========="
