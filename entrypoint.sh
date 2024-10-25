@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+pyhthon3 -m venv venv
 source venv/bin/activate
 python manage.py makemigrations
 python manage.py migrate
